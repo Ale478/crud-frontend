@@ -16,7 +16,7 @@ function App() {
         <Route exact path="/" element={<Homepage/>} />
         <Route path="/welcome" element={<Welcome />} />
         <Route path="/gestion-usuarios" element={<Crud />} />
-        <Route path="/ver-logs" element={<Audit />} />
+        <Route path="/audit" element={<Audit />} />
       </Routes>
     </Router>
   );

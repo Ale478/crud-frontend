@@ -1,0 +1,22 @@
+.Audit {
+    margin-bottom: 1rem;
+  }
+  
+  table {
+    table-layout: fixed;
+    width: 100%;
+  }
+  
+  td,
+  th {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border: 1px solid #dee2e6;
+    padding: 0.5rem;
+    vertical-align: top;
+  }
+  
+  th {
+    text-align: left;
+  }
