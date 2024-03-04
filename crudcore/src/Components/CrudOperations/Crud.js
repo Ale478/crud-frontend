@@ -60,8 +60,8 @@ class Crud extends Component {
                 <td>{user.lastName}</td>
                 <td>{user.username}</td>
                 <td>{user.email}</td>
-                <td>{user.dateCreation}</td>
-                <td>{user.dateModification}</td>
+                <td>{new Date(user.dateCreation).toLocaleDateString()}</td>
+                <td>{new Date(user.dateModification).toLocaleDateString()}</td>
                 <td>
                   <button className='btn btn-primary'><MdDriveFileRenameOutline className='icon'/></button>
                   {"   "}
