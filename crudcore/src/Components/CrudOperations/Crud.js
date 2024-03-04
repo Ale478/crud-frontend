@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import axios from 'axios';
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -26,6 +25,20 @@ class Crud extends Component {
 
     axios.get(url.toString()).then((response) => {
       this.setState({ data: response.data.result.user });
+    });
+  };
+
+  deleteUser = (idUser) => {
+    const url = new URL("http://localhost:5172/User/DeleteUser");
+    url.searchParams.append("idUser", idUser);
+    url.searchParams.append("modifyBy", "ReactApp");
+
+    axios.delete(url.toString()).then((response) => {
+      if (response.data.Success) {
+        this.getRequest(1, true);
+      } else {
+        alert("User deleted successfully.");
+      }
     });
   };
 
@@ -65,7 +78,7 @@ class Crud extends Component {
                 <td>
                   <button className='btn btn-primary'><MdDriveFileRenameOutline className='icon'/></button>
                   {"   "}
-                  <button className='btn btn-danger'><FaTrash className='icon' /></button>
+                  <button className='btn btn-danger' onClick={() => this.deleteUser(user.idUser)}><FaTrash className='icon' /></button>
                 </td>
               </tr>
             ))}
@@ -77,6 +90,4 @@ class Crud extends Component {
 }
 
 export default Crud;
-
-
 
